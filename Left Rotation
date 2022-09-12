@@ -1,0 +1,11 @@
+function rotLeft(a, d) {
+    let movedNum;
+
+    for (let i = 0; i < d; i++) {
+        movedNum = a.shift();
+        a.push(movedNum);
+    }
+
+    return a;
+
+}
