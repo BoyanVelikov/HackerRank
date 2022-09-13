@@ -1,0 +1,17 @@
+function sockMerchant(n, ar) {
+    let pairsCount = 0;
+    let uniqueArr = [];
+
+    for (let i = 0; i < ar.length; i++) {
+        if (!uniqueArr.includes(ar[i])) {
+            uniqueArr.push(ar[i])
+        }
+    }
+
+    for (let i = 0; i < uniqueArr.length; i++) {
+        let midPair = ar.filter((x) => x == uniqueArr[i]);
+        pairsCount = pairsCount + Math.floor(midPair.length / 2);
+    }
+
+    return pairsCount;
+}
