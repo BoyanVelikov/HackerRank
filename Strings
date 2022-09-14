@@ -1,0 +1,21 @@
+function repeatedString(s, n) {
+    let aCount = 0;
+    let remain;
+    let remainString = '';
+    let remainArr = [];
+    let stringArr = s.split('');
+    let aInitialCount = stringArr.filter((x) => x == 'a').length;
+
+    aCount = Math.floor(n / s.length) * aInitialCount;
+    remain = n % s.length;
+
+    if (remain > 0) {
+        for (let i = 0; i < remain; i++) {
+            remainArr.push(s[i]);
+        }
+    }
+    aCount += (remainArr.filter((x) => x == 'a').length);
+
+    return aCount;
+
+}
